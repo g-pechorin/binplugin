@@ -1,6 +1,6 @@
 # Unity5 Binary Plugin
 
-Here you will find an attempt to create a [Unity5 Binary Plugin](http://docs.unity3d.com/Manual/PluginsForDesktop.html)
+Here you will find an successful attempt to create a [Unity5 Binary Plugin](http://docs.unity3d.com/Manual/PluginsForDesktop.html)
 
 # Build the bianry stuff on Windows
 
