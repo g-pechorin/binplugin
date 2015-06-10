@@ -3,6 +3,5 @@ project(Unity5BinaryPlugin)
 
 add_library(
 	Foober MODULE 
-		src/foober.hpp
 		src/foober.cpp
 	)
