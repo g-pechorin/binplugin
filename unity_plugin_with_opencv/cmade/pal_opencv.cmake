@@ -213,7 +213,34 @@ set(BUILD_SHARED_LIBS OFF CACHE BOOL "Don't use shared libs - ever" FORCE)
 	set(WITH_CUDA OFF CACHE BOOL "Don't use CUDA - it seems to confuse CMake" FORCE)
 
 # random version ; scrape_archive(opencv 07bee73ebfbb760a09fc9340a82857f6 https://github.com/Itseez/opencv/archive/1f5fd865aaf1be73498a8269a8dbf23318399da8.zip)
-# 2.4.11 ; scrape_archive(opencv e2cb7d3cede8613c9e9375bf1cac82d3 https://github.com/Itseez/opencv/archive/2c9547e3147779001811d01936aed38f560929fc.zip)
 
+# 2.4.11 ;
 	scrape_archive(opencv e2cb7d3cede8613c9e9375bf1cac82d3 https://github.com/Itseez/opencv/archive/2c9547e3147779001811d01936aed38f560929fc.zip)
 	add_scraped_directories(opencv ${scraped_archive_opencv})
+	include_directories(
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/androidcamera/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/calib3d/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/contrib/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/core/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/dynamicuda/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/features2d/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/flann/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/gpu/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/highgui/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/imgproc/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/java/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/legacy/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/ml/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/nonfree/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/objdetect/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/ocl/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/photo/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/python/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/stitching/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/superres/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/ts/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/video/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/videostab/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/viz/include
+		${scraped_archive_opencv}/opencv-2c9547e3147779001811d01936aed38f560929fc/modules/world/include
+	)
