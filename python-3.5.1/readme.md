@@ -1,4 +1,4 @@
-THis is an example Python 3.5.1 plugin
+This is an example Python 3.5.1 plugin
 
 Like a good little busybody ;) python includes the all-the-tools you'll need to compile native modules.
 
