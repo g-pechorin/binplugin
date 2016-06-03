@@ -1,32 +1,20 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.0)
 project(OpenCV-Unity5-plugin)
 
 include(cmade/pal_opencv.cmake)
 
 add_library(
-	unity_plugin_with_opencv MODULE 
+	unity_plugin_with_opencv MODULE
 		src/unity_plugin_with_opencv.cpp
 		src/unity_plugin_with_opencv.hpp
 	)
 	target_link_libraries(
 		unity_plugin_with_opencv
 			opencv_core
-			opencv_calib3d
-			opencv_contrib
-			opencv_features2d
-			opencv_flann
-			opencv_gpu
-			#opencv_highgui
-			#opencv_imgproc
-			opencv_legacy
-			opencv_ml
-			opencv_nonfree
-			opencv_objdetect
-			opencv_ocl
-			opencv_photo
-			opencv_stitching
-			opencv_superres
-			opencv_ts
-			opencv_video
-			opencv_videostab
+			opencv_imgproc
+			opencv_highgui
+		)
+
+		add_custom_command(TARGET unity_plugin_with_opencv POST_BUILD
+		    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:unity_plugin_with_opencv> ${CMAKE_CURRENT_SOURCE_DIR}/../project/Assets/Plugins/x86/unity_plugin_with_opencv.dll
 		)
