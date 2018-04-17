@@ -2,8 +2,9 @@ from distutils.core import setup, Extension
 
 module1 = Extension('spam',
                     sources = [
-                        'spammodule.c',
-                        'spampp.cpp',
+                        'src/main/spammodule.c',
+                        'src/main/spampp.cpp',
+                        'src/main/run_arraything.cpp',
                     ])
 
 setup (name = 'spam',
