@@ -1,7 +1,10 @@
 from distutils.core import setup, Extension
 
 module1 = Extension('spam',
-                    sources = ['spammodule.c'])
+                    sources = [
+                        'spammodule.c',
+                        'spampp.cpp',
+                    ])
 
 setup (name = 'spam',
        version = '1.0',

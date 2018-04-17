@@ -1,7 +1,8 @@
 #include <Python.h>
 
-static PyObject*
-spam_system(PyObject *self, PyObject *args)
+#include "spampp.h"
+
+static PyObject* spam_system(PyObject *self, PyObject *args)
 {
     const char *command;
     int sts;
@@ -14,11 +15,13 @@ spam_system(PyObject *self, PyObject *args)
 
 static PyMethodDef SpamMethods[] =
 {
-    {"system",  spam_system, METH_VARARGS, "Execute a shell command."},
+    {"system", spam_system, METH_VARARGS, "Execute a shell command."},
+    {"throw",  spam_throw,  METH_NOARGS,  "Throw an exception"},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
-static struct PyModuleDef spammodule = {
+static struct PyModuleDef spammodule =
+{
    PyModuleDef_HEAD_INIT,
    "spam",   /* name of module */
    NULL, //spam_doc, /* module documentation, may be NULL */
@@ -27,8 +30,7 @@ static struct PyModuleDef spammodule = {
    SpamMethods
 };
 
-PyMODINIT_FUNC
-PyInit_spam(void)
+PyMODINIT_FUNC PyInit_spam(void)
 {
     return PyModule_Create(&spammodule);
 }
