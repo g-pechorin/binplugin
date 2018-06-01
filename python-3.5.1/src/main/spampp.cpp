@@ -16,17 +16,43 @@ PyObject* spam_throw(PyObject *self, PyObject *args)
 
 
 #include <iostream>
+#include <sstream>
 
 PyObject* spam_arraything(PyObject *self, PyObject *args)
 {
   // https://docs.python.org/3/extending/extending.html
 
-    std::cerr << "TODO; read the arguments!" << std::endl;
-      std::cerr << "TODO; read the arguments!" << std::endl;
-        std::cerr << "TODO; read the arguments!" << std::endl;
-          std::cerr << "TODO; read the arguments!" << std::endl;
-            std::cerr << "TODO; read the arguments!" << std::endl;
-              std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+  std::cerr << "TODO; read the arguments!" << std::endl;
+
+  std::stringstream message;
+
+  message << "arguments;";
+  message << "\n\targs = " << (nullptr == args ? "<null>" : ">args<");
+
+  std::cerr << "TODO; parse the tuple" << std::endl;
+
+  // parse the tuple.
+  // python (I think) passes all arguments as some sort fo tuple thingie
+  // ... and if it can't be parsed; python sets up an error
+  // ... and they're "Borrowed" so we don't have to decrement them
+  // ... but lists are full python object (yuck!) so we need to dance shenanigans to read them
+  // https://docs.python.org/3/c-api/arg.html#c.PyArg_ParseTuple
+  // https://stackoverflow.com/questions/22458298/extending-python-with-c-pass-a-list-to-pyarg-parsetuple#22487015
+  float factor;
+  PyObject* data;
+  if (!PyArg_ParseTuple(args, ("O" "f"), &data, &factor))
+    return nullptr;
+
+  message << "\n\tdata = " << (nullptr == data ? "<null>" : ">data<");
+  message << "\n\tfactor = " << factor;
+
+  PyErr_SetString(PyExc_RuntimeError, message.str().c_str());
+  return nullptr;
 
   // HA!
   std::vector<float> list;
@@ -35,10 +61,6 @@ PyObject* spam_arraything(PyObject *self, PyObject *args)
   list.push_back(19.83f);
 
   return vector_to_list(list);
-
-
-  PyErr_SetString(PyExc_RuntimeError, "spam_arraything() is not complete");
-  return nullptr;
 }
 
 

@@ -36,6 +36,6 @@ image = [
     9, 0,
 ]
 
-actual = spam.arraything(image, 3)
+actual = spam.arraything(image, 7.25)
 
 print(str(actual))
