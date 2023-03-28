@@ -5,13 +5,10 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include <fstream>
 
 // this function uses OpenCV to decode a blob of bytes as if it was an image, the, plops it into a byte array as RGB24 data
 EXPORT_API void decode(int32_t fileSize, int8_t fileData[], int32_t imageWidth, uint8_t imageStorage[])
 {
-	// std::ofstream("Log.txt", std::ios::out | std::ios::app) << "-----------------\nimageWidth = " << imageWidth << std::endl;
-
 	// load the image into BGR
 	cv::Mat loadedImage = cv::imdecode(std::vector<int8_t>(fileData, fileData + fileSize), CV_LOAD_IMAGE_COLOR);
 

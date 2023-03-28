@@ -1,4 +1,6 @@
 
+#pragma once
+
 /*
 	This macro tells the compiler to create the function in such a way that Unity (or Unity's P/Invoke) can find it in the DLL
 */
