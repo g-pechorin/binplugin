@@ -1,4 +1,7 @@
+
+# Unity3D folders
 [Ll]ibrary/
+[Ll]ogs/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -19,3 +22,7 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+###
+# Peter uses target/ for CMake out of habit
+target/
