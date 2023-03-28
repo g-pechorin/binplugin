@@ -16,5 +16,5 @@ add_library(
 		)
 
 		add_custom_command(TARGET unity_plugin_with_opencv POST_BUILD
-		    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:unity_plugin_with_opencv> ${CMAKE_CURRENT_SOURCE_DIR}/../project/Assets/Plugins/x86/unity_plugin_with_opencv.dll
+			COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:unity_plugin_with_opencv> ${CMAKE_CURRENT_SOURCE_DIR}/../unity_project/Assets/Plugins/unity_plugin_with_opencv.dll
 		)

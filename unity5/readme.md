@@ -4,7 +4,7 @@
 - TODO
 	- [x] update the project to the 2018 Unity version
 	- [x] build/test/run the cmake project
-		- [ ] build it
+		- [x] build it
 			- it's curently building the x64 dll into an x86 dir
 			- ... but ... otherwise looks fine
 			- ... and unity doesn't seem to care ...
